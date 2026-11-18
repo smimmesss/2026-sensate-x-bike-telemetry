@@ -1,0 +1,51 @@
+#pragma once
+
+/*
+ * Copy this file to config.h and replace every placeholder.
+ * config.h is ignored by Git. Never commit Wi-Fi or Firebase user credentials.
+ */
+
+// Wi-Fi network used by the ESP32-S3.
+#define WIFI_SSID               "YOUR_WIFI_SSID"
+#define WIFI_PASSWORD           "YOUR_WIFI_PASSWORD"
+
+// Firebase project settings.
+// Find the Web API key in Firebase Console > Project settings > General.
+// Create a dedicated device user under Authentication > Users (Email/Password).
+#define FIREBASE_API_KEY        "YOUR_FIREBASE_WEB_API_KEY"
+#define FIREBASE_USER_EMAIL     "bike-device@example.invalid"
+#define FIREBASE_USER_PASSWORD  "REPLACE_WITH_A_LONG_UNIQUE_PASSWORD"
+
+// Database root URL only (do not append .json or a data path).
+#define FIREBASE_DATABASE_URL   "https://YOUR_PROJECT-default-rtdb.REGION.firebasedatabase.app"
+
+// Paths are kept compatible with the supplied BikeComputer.ino database layout.
+#define FIREBASE_TELEMETRY_PATH "/telemetrie_bici"
+#define FIREBASE_TRACK_PATH     "/telemetrie_bici/track"
+#define FIREBASE_NAVIGATION_PATH "/nav_instruction"
+
+/*
+ * TLS trust anchor (required for Firebase). Paste the PEM-encoded ROOT CA
+ * certificate(s) that validate the certificate chain presented by your actual
+ * Realtime Database hostname. Do not paste a short-lived server/leaf cert.
+ * Obtain and validate this chain for your database host before deployment.
+ *
+ * The empty default deliberately disables Firebase rather than silently using
+ * setInsecure(). Keep the PEM out of source control by placing it in config.h.
+ */
+#define FIREBASE_ROOT_CA_PEM    ""
+
+// PEM syntax example (replace the empty define above in your private config.h):
+// #define FIREBASE_ROOT_CA_PEM R"PEM(
+// -----BEGIN CERTIFICATE-----
+// PASTE_THE_VALIDATED_ROOT_CA_CERTIFICATE_HERE
+// -----END CERTIFICATE-----
+// )PEM"
+
+// GNSS settings for the BIP26 LC29H(AA) UART connection.
+#define GNSS_BAUD_RATE          115200
+#define GNSS_RX_GPIO            17  // ESP32-S3 RX <- LC29H TX
+#define GNSS_TX_GPIO            18  // ESP32-S3 TX -> LC29H RX
+
+// Enable the Quectel proprietary OSNMA configuration command at boot.
+#define GNSS_ENABLE_OSNMA       1

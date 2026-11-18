@@ -1,0 +1,56 @@
+# Local configuration and secrets
+config.h
+**/config.h
+!firmware/config.h.example
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+firebase-adminsdk*.json
+service-account*.json
+
+# Arduino IDE / arduino-cli generated output
+.build/
+build/
+out/
+arduino_build_*/
+arduino_cache_*/
+*.ino.cpp
+*.elf
+*.hex
+*.bin
+*.uf2
+*.map
+*.d
+*.o
+*.a
+*.so
+*.dll
+*.exe
+*.lib
+*.pdb
+*.obj
+
+# PlatformIO (may be used by contributors)
+.pio/
+.piolibdeps/
+
+# Editor settings and temporary files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.tmp
+*.bak
+
+# OS metadata
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.Spotlight-V100/
+.Trashes/
