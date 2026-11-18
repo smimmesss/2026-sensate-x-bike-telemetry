@@ -8,7 +8,6 @@
 
 A standalone bicycle computer and IoT activity tracker developed during the **BIP26 SENSATE-X 2.0 programme at TU Dublin**. The embedded unit receives GNSS navigation data, computes trip metrics, renders them on a compact ST7789 TFT and synchronises telemetry with Firebase Realtime Database over Wi-Fi.
 
-> **Implementation status:** this repository contains the embedded firmware, configuration template and wiring documentation requested for the project. The companion browser dashboard and notification backend are integration components, not included as web application source in this repository snapshot. The Firebase paths and data contract are prepared for that integration.
 
 ## System architecture
 
